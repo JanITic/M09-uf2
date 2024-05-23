@@ -1,0 +1,23 @@
+[
+    {
+        "name": "90210",
+        "artist": "Travis Scott",
+        "path": "audios/90210.mp3",
+        "duration": "5:39",
+        "img": "covers/90210.jpg"
+    },
+    {
+        "name": "My eyes",
+        "artist": "Travis Scott",
+        "path": "audios/MY EYES.mp3",
+        "duration": "4:12",
+        "img": "covers/MY EYES.jpg"
+    },
+    {
+        "name": "Not Like Us",
+        "artist": "Kendrick Lamar",
+        "path": "audios/Not Like Us.mp3",
+        "duration": "4:33",
+        "img": "covers/Not Like Us.png"
+    }
+]
