@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/img/icons8-favicon-32.png">
+</head>
+<body>
+  <nav>
+    <a href="#about_us"><button>Nosaltres</button></a>
+    <a href="#carta"><button>Carta</button></a>
+    <a href="#gal"><button>Galería</button></a>
+  </nav>
+  
+  <header>
+    <h1 class="bob1">Bob fumon</h1>
+    <span class="subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    <img class="imgmenu" src="./img/5.png" alt="imagen menu banner top" />
+  </header>
+
+  <div class="page">
+    <section class="about_us" id="about_us">
+      <h2 class="Nosaltres">Sobre Nosaltres</h2>
+      <img class="bob2" src="./img/1.jpg" alt="Bob2" />
+      <div class="left">
+        <span class="nosaltressub">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam ipsum amet quibusdam? Eum harum repudiandae sequi, quas laboriosam adipisci</span>
+      </div>
+      <div class="nosaltressub2">
+        <img class="bob3" src="./img/bobDuro.jpg" alt="Bob3" />
+        <div class="right">
+          <span class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam ipsum amet quibusdam? Eum harum repudiandae sequi, quas laboriosam adipisci</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="top">
+      <h2>Carta</h2>
+    </div>
+
+    <section class="carta" id="carta">
+      <div class="menu">
+        <h2>Menú</h2>
+      </div>
+      <div class="menu1">Menu 1</div>
+      <div class="textbox">
+        <h2>Contingut</h2>
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam ipsum amet quibusdam? Eum harum repudiandae sequi, quas laboriosam adipisci</span>
+      </div>
+      <div class="bobduro1">
+        <img src="img/ratonfumon.jpg" alt="" class="imgwidth" />
+        <div class="banner">Bob mileurista</div>
+      </div>
+      <div class="bobduro2">
+        <img src="img/2.jpg" alt="" class="imgwidth" />
+        <div class="banner">Bob panza</div>
+      </div>
+    </section>
+
+    <section class="carta">
+      <div class="menu1">Menu 2</div>
+      <div class="textbox">
+        <h2>Contingut</h2>
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam ipsum amet quibusdam? Eum harum repudiandae sequi, quas laboriosam adipisci</span>
+      </div>
+      <div class="bobduro1">
+        <img src="img/The-real-santa-claus-391[1].jpg" alt="" class="imgwidth" />
+        <div class="banner">Bob fumon</div>
+      </div>
+      <div class="bobduro2">
+        <img src="img/The-real-santa-claus-391[1].jpg" alt="" class="imgwidth" />
+        <div class="banner">Bob pensionista</div>
+      </div>
+    </section>
+
+    <section class="gal" id="gal">
+      <h2 class="">Galeria d'imatges</h2>
+      <div class="galeria">
+        <div class="item" id="darker"><img src="img/3.jpg" alt="Bob"></div>
+        <div class="item"><img src="img/bobDuro.jpg" alt="bob"></div>
+        <div class="item"><img src="img/3.jpg" alt="Bob"></div>
+        <div class="item" id="darker"><img src="img/bobDuro.jpg" alt="bob"></div>
+        <div class="item" id="darker"><img src="img/3.jpg" alt="bob"></div>
+        <div class="item"><img src="img/bobDuro.jpg" alt="bob"></div>
+        <div class="item"><img src="img/bobDuro.jpg" alt="bob"></div>
+        <div class="item" id="darker"><img src="img/bobDuro.jpg" alt="bob"></div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <video id="myVideo" loop class="responsive-video">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+      <div class="video-controls">
+        <button id="play-pause-button" class="control-button"></button>
+        <button id="mute-button" class="control-button"></button>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <div>
+      <span class="email">mail@mail.com</span>
+      <span class="tlf">666 666 666</span>
+    </div>
+    <span class="logo">Bob fumon</span>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var video = document.getElementById('myVideo');
+      var playPauseButton = document.getElementById('play-pause-button');
+      var muteButton = document.getElementById('mute-button');
+  
+      // Inicializar el estado del vídeo y los botones
+      video.muted = true;
+      video.pause();
+      playPauseButton.style.backgroundImage = 'url("./img/play.png")';
+      muteButton.style.backgroundImage = 'url("./img/volumeOff.png")';
+  
+      playPauseButton.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          playPauseButton.style.backgroundImage = 'url("./img/pause.png")';
+        } else {
+          video.pause();
+          playPauseButton.style.backgroundImage = 'url("./img/play.png")';
+        }
+      });
+  
+      muteButton.addEventListener('click', function() {
+        if (video.muted) {
+          video.muted = false;
+          muteButton.style.backgroundImage = 'url("./img/volumeUp.png")';
+        } else {
+          video.muted = true;
+          muteButton.style.backgroundImage = 'url("./img/volumeOff.png")';
+        }
+      });
+  
+      // Función para reproducir el video automáticamente cuando aparece en pantalla
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            video.play();
+            playPauseButton.style.backgroundImage = 'url("./img/pause.png")';
+          } else {
+            video.pause();
+            playPauseButton.style.backgroundImage = 'url("./img/play.png")';
+          }
+        });
+      }, { threshold: 0.5 });
+  
+      observer.observe(video);
+    });
+  </script>
+  
+</body>
+</html>
